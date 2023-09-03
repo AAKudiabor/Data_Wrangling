@@ -1,0 +1,15 @@
+library(dslabs)
+DSL_Directory <- system.file("extdata", package = "dslabs")
+list.files(DSL_Directory)
+file_name <- "murders.csv"
+fullpath <- file.path(DSL_Directory, file_name)
+file.copy(fullpath,getwd())
+
+dat <- read.csv(file_name)
+head(dat)
+class(dat)
+
+url <- "https://raw.githubusercontent.com/rafalab/dslabs/master/inst/extdata/murders.csv"
+cont <- read.csv(url)
+cont
+download.file(url,"Murders.csv")
